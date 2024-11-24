@@ -11,7 +11,7 @@ def run(file_name, file_out):
         print(f'have assembled the output{file_out}')
         # linker
         subprocess.run(['ld', '-o', bin_file, file_out], stdout=subprocess.PIPE, text=True)
-        print(f'have linked the output to the binary {file_out}')
+        print(f'have linked the output to the binary {bin_file}')
     except (subprocess.SubprocessError, subprocess.CalledProcessError) as e:
         print(f'{e}\n')
 
