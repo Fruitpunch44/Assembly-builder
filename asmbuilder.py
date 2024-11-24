@@ -18,7 +18,8 @@ def run(file_name, file_out):
 
 def main():
     if len(sys.argv) < 3:
-        print("enter the right amount of parameter ")
+        print("enter the required amount of parameters \n
+        usage: script.py file_out.o file_name.s ")
     else:
         file_out = sys.argv[1]
         file_name = sys.argv[2]
