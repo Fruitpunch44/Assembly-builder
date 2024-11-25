@@ -12,6 +12,12 @@ def run(file_name, file_out):
         # linker
         subprocess.run(['ld', '-o', bin_file, file_out], stdout=subprocess.PIPE, text=True)
         print(f'have linked the output to the binary {bin_file}')
+        
+        # pass to the challenge checkfile for the output
+        OUTPUT = subprocess.check_output(['/challenge/run', bin_file], stderr=subprocess.PIPE, text=True)
+        print(OUTPUT)
+
+    
     except (subprocess.SubprocessError, subprocess.CalledProcessError) as e:
         print(f'{e}\n')
 
